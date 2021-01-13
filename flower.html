@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://i6.cims.nyu.edu/~jc3436/drawing/css/flower/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>CSS Flower</title>
+    <style>
+      /*centering*/
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #scene {
+        width: 200px;
+        height: 200px;
+        perspective: 600px;
+        perspective-origin: center top;
+      }
+
+      .flower {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+      }
+
+      .petal {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        opacity: 0.5;
+        background-image: url(petal-texture.jpg);
+        background-size: 200px 200px;
+      }
+
+      /* center of the flower */
+      .center {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: radial-gradient(yellow, violet);
+        transform: rotateX(90deg) translateX(50px) translateZ(-140px);
+      }
+
+      /* petal 1 */
+      .petal:nth-child(2) {
+        transform: rotateY(0deg) translateZ(140px) rotate3d(-2, 0.5, 0, 45deg);
+      }
+
+      /* petal 2 */
+      .petal:nth-child(3) {
+        transform: rotateY(60deg) translateZ(140px) rotate3d(-2, 0.5, 0, 45deg);
+      }
+
+      /* petal 3 */
+      .petal:nth-child(4) {
+        transform: rotateY(120deg) translateZ(140px) rotate3d(-2, 0.5, 0, 45deg);
+      }
+
+      /* petal 4 */
+      .petal:nth-child(5) {
+        transform: rotateY(180deg) translateZ(140px) rotate3d(-2, 0.5, 0, 45deg);
+      }
+
+      /* petal 5 */
+      .petal:nth-child(6) {
+        transform: rotateY(240deg) translateZ(140px) rotate3d(-2, 0.5, 0, 45deg);
+      }
+
+      /* petal 6 */
+      .petal:nth-child(7) {
+        transform: rotateY(300deg) translateZ(140px) rotate3d(-2, 0.5, 0, 45deg);
+      }
+
+      /*transition*/
+      #scene {
+        transition: perspective 2s;
+      }
+
+      #scene:hover {
+        perspective: 300px;
+      }
+
+      /*animation*/
+      @keyframes appear {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+
+      #scene {
+        animation-name: appear;
+        animation-duration: 5s;
+      }
+
+      @keyframes rotate{
+        from {transform: rotateY(0deg);}
+        to {transform: rotateY(-360deg);}
+      }
+      
+      .flower:hover{
+        animation-name: rotate;
+        animation-duration: 5s;
+        animation-timing-function:linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes rotate1{
+        from {transform: rotateY(0deg);}
+        to {transform: rotateY(360deg);}
+      }
+      
+      .flower{
+        animation-name: rotate1;
+        animation-duration: 5s;
+        animation-timing-function:linear;
+        animation-iteration-count: infinite;
+      }
+    </style>
+</head>
+
+  <body>
+    <div id="scene">
+      <div class="flower">
+        <div class="center"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+      </div>
+    </div>
+
+</body></html>
