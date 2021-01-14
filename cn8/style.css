@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes color1 {
+    0%{color:darkorchid;}
+    20%{color:red;}
+    40%{color:blue;}
+    60%{color:green;}
+    80%{color:yellow;}
+    100%{color:coral;}
+    
+}
+
+
+.year {
+    width: 65px;
+    height: 65px;
+    line-height: 65px; 
+    cursor: pointer;
+    animation-name: color1;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.package {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ring {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    z-index: -1;
+}
+
+@keyframes color2 {
+    0%{fill:red;}
+    20%{fill:blue;}
+    40%{fill:green;}
+    60%{fill:yellow;}
+    80%{fill:coral;}
+    100%{fill:darkorchid;}
+}
+
+.heart {
+    animation-name: color2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.heart:nth-child(1) {
+    transform: translate(18px,56px)  rotate(-90deg);
+}
+.heart:nth-child(2) {
+    transform: translate(57px,3px);
+}
+.heart:nth-child(3) {
+    transform: translate(104px,-14px);
+}
+.heart:nth-child(4) {
+    transform: translate(140px,6px) rotate(90deg);
+}
+.heart:nth-child(5) {
+    transform: translate(139px,37px) rotate(90deg);
+}
+.heart:nth-child(6) {
+    transform: translate(101px,57px) rotate(180deg);
+}
+.heart:nth-child(7) {
+    transform: translate(55px,40px) rotate(180deg);
+}
+.heart:nth-child(8) {
+    transform: translate(17px,-14px) rotate(-90deg);
+}
+
+@keyframes turn {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.click {
+    animation-name: turn;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
