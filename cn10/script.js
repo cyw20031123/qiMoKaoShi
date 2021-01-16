@@ -6,7 +6,7 @@ function ji(){
         
         year.innerHTML=i +"秒";
         i--;
-        setTimeout(ji,100);
+        setTimeout(ji,1000);
     }else{
         year.innerHTML="拜年了！点击领红包";
     }
